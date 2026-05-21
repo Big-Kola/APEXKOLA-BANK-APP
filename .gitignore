@@ -21,3 +21,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Terraform
+terraform/.terraform/
+terraform/terraform.tfstate*
+terraform/*.backup
