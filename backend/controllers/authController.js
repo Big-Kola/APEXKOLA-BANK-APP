@@ -42,6 +42,7 @@ exports.register = async (req, res) => {
       },
     });
   } catch (error) {
+    console.error('Register error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
@@ -81,6 +82,7 @@ exports.login = async (req, res) => {
       } : null,
     });
   } catch (error) {
+    console.error('Login error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
@@ -109,6 +111,7 @@ exports.getProfile = async (req, res) => {
       } : null,
     });
   } catch (error) {
+    console.error('GetProfile error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };

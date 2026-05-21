@@ -12,11 +12,13 @@ const transactionRoutes = require('./routes/transactions');
 
 const app = express();
 
-connectDB();
-
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
+
+app.get('/', (req, res) => {
+  res.json({ status: 'OK', message: 'ApexKola Bank API', endpoints: { health: '/api/health', auth: '/api/auth', accounts: '/api/accounts', transactions: '/api/transactions' } });
+});
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'ApexKola Bank API is running' });
@@ -32,6 +34,9 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
+
+connectDB();
+
 app.listen(PORT, () => {
   console.log(`ApexKola Bank API running on port ${PORT}`);
 });
