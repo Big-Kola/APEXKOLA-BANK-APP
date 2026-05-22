@@ -15,9 +15,9 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb://mongodb:27017/apexkola_bank
-      - JWT_SECRET=dev_secret_change_in_prod
-      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - NODE_ENV=${NODE_ENV}
     volumes:
       - ./backend:/app
       - /app/node_modules

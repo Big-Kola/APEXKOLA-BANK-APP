@@ -1,0 +1,16 @@
+aws_region = "us-east-2"
+vpc_cidr   = "10.0.0.0/16"
+
+subnet_cidrs = [
+  "10.0.1.0/24",
+  "10.0.2.0/24",
+  "10.0.3.0/24",
+  "10.0.4.0/24"
+]
+
+jwt_secret = "your_jwt_secret_here"
+mongo_uri  = "your_mongo_uri_here"
+
+domain_name    = "apexkola.local"
+backend_image  = "bigkola1/backend:latest"
+frontend_image = "bigkola1/frontend:latest"
